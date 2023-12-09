@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(177, 222, 255);
+            color: rgb(0, 55, 73);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgb(229, 245, 255);
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(15, 15, 247, 0.1);
+            border-radius: 15px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .flex-container > div {
+            width: 48%;
+        }
+
+
+        input, select {
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            
+        }
+
+        #same {
+            margin-top: 10px;
+        }
+
+        #checkbox input[type="checkbox"]{
+            display: flex;
+            text-align: left;
+            border-radius: 15px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #title {
+            font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+            text-align: center;
+            font-weight: 600;
+            font-size: larger;
+            color:rgb(0, 61, 81);
+        }
+
+        h4, h5 {
+            text-align: center;
+
+        }
+
+        #subtitle {
+            font-size:medium;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid rgb(51, 164, 201);
+            border-radius: 10px;
+
+        }
+
+        input[type="radio"]{
+            padding: 12px 20px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            border: 3px solid rgb(51, 164, 201);
+            border-radius: 10px;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        .required {
+            color: rgb(255, 0, 0);
+            font-weight:300;
+        }
+    
+        #confirmation {
+            display: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(27, 172, 61);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #failedValidation {
+            display: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(255, 255, 255);
+            margin-top: 20px;
+            text-align: center;
+            background-color: red;
+            width: 400px;
+            margin-left: 20%;
+            border-radius: 7px / 5px;
+            padding: 5px;
+
+
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: bold;  
+            color: rgb(0, 102, 135);
+        }
+
+        #final {
+            text-align: center;
+        }
+
+        button {
+            top: 50%;
+            left: 35%;
+            position: relative;
+            background-color: rgb(81, 180, 255);
+            border-radius: 9px;
+            border: 3px solid rgb(81, 180, 255);
+            color:aliceblue;
+            width:30%;
+            padding: 5px;
+            font-size: medium;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color:rgb(29, 66, 94);
+        }
+    </style>
+    <title>Order Form</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Component order form</h2>
+        
+        <h4 id="title">Personal information</h4>
+        <div class="flex-container">
+            <div>
+                <label for="fname">First name:<span class="required">*</span></label>
+                <input type="text" id="fname" name="fname" placeholder="John" required>
+            </div>
+            <div>
+                <label for="lname">Last name:<span class="required">*</span></label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" required>
+            </div>
+            <div>
+                <label for="email">Email address:<span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="john.smith@mail.com">
+            </div>
+            <div>
+                <label for="phone">Phone number:<span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+31612345678">
+            </div>
+        </div>
+        
+        <h4 id="title">Order information</h4>
+        <label>Component:<span class="required">*</span></label>
+        <div class="flex-container">
+             <div>
+                <input type="radio" id="cpu" name="one" class="inputBox">
+                <label>CPU</label>
+            </div>
+            <div>
+                <input type="radio" id="motherboard" name="one" class="inputBox">
+                <label>Motherboard</label>
+            </div>
+            <div>
+                <input type="radio" id="ram" name="one" class="inputBox">
+                <label>RAM</label>
+            </div>
+            <div>
+                <input type="radio" id="hdd" name="one" class="inputBox">
+                <label>HDD</label>
+            </div>
+            <div>
+                
+                <input type="radio" id="sdd" name="one" class="inputBox">
+                <label>SDD</label>
+            </div>
+            <div>
+                <input type="radio" id="gpu" name="one" class="inputBox">
+                <label>GPU</label>
+            </div>
+            <div>
+                <label for="other">Other:</label>
+                <input type="text" id="other" name="other" placeholder="Please specify component" class="inputBox">
+            </div>
+            <div>
+                <label for="quantity">Quantity: <span class="required">*</span></label>
+                <input type="number" id="quantity" name="quantity" min="0" max="99" class="inputBox">
+            </div>
+            <div>
+                <label for="date">Date:<span class="required">*</span></label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div>
+                <label for="instructions">Instructions / notes:</label>
+                <textarea id="instructions" name="instructions" rows="2" cols="50"></textarea>
+            </div>
+        </div>
+
+
+        <h4 id="title">Shipping information</h4>
+        <h5 id="subtitle">Shipping address</h5>
+        <div class="flex-container">
+            <div>
+                <label for="country">Country:<span class="required">*</span></label>
+                <input type="text" id="country" name="country" placeholder="The Netherlands">
+            </div>
+            <div>
+                <label for="postalcode">Postal Code:<span class="required">*</span></label>
+                <input type="text" id="pc" name="pc" placeholder="1111AA" minlength="6" maxlength="6" required>
+            </div>
+            <div>
+                <label for="street">Streetname:<span class="required">*</span></label>
+                <input type="text" id="sn" name="sn" placeholder="Mainroad" required>
+            </div>
+            <div>
+                <label for="number">House number:<span class="required">*</span></label>
+                <input type="text" id="hn" name="hn" placeholder="1" required>
+            </div>
+        </div>
+
+        <h5 id="subtitle">Billing address</h5>
+        <div class="flex-container">
+ 
+            <div>
+                <label for="country">Country:</label>
+                <input type="text" id="b-country" name="b-country" placeholder="The Netherlands">
+            </div>
+            <div>
+                <label for="postalcode">Postal Code:</label>
+                <input type="text" id="b-pc" name="b-pc" placeholder="1111AA" minlength="6" maxlength="6">
+            </div>
+            <div>
+                <label for="street">Streetname:</label>
+                <input type="text" id="b-sn" name="b-sn" placeholder="Mainroad">
+            </div>
+            <div>
+                <label for="number">House number:</label>
+                <input type="text" id="b-hn" name="b-hn" placeholder="1">
+            </div>
+            <div id="checkbox">
+                <label for="same">Same as shipping address:</label>
+                <input type="checkbox" id="same" name="same">
+            </div>
+        </div>
+
+        <div>
+            <label for="delivery">Delivery method:<span class="required">*</span></label>
+            <select name="delivery-method" id="delivery-method">
+                <option value="pick-up">Pick up in store (Mon-Fri: 8AM - 4PM)</option>
+                <option value="postnl">Delivery with PostNL</option>
+                <option value="dhl">Delivery with DHL</option>
+                <option value="dpd">Delivery with DPD</option>
+            </select>
+        </div>
+
+        <button type="submit" onclick="if (validateForm ()) confirmSubmit()">Submit</button>
+        <div id="final">By clicking the button above, you will be submitting the request form.</div>
+        <div id="confirmation">Your form has been submitted succesfully!</div>
+        <div id="failedValidation">Please fill out all fields marked with *.</div>
+    </div>
+
+    <script>
+        function confirmSubmit() {
+        let text = document.getElementById("confirmation");
+        text.style.display = "block";
+        }
+
+        function validateForm() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let quantity = document.getElementById("quantity").value;
+        let date = document.getElementById("date").value;
+        let country = document.getElementById("country").value;
+        let postal = document.getElementById("pc").value;
+        let street = document.getElementById("sn").value;
+        let housenumber = document.getElementById("hn").value;
+
+        if (fname == "" || lname == "" || email == "" || phone == "" ||quantity == "" ||date == "" ||country == "" ||postal == "" ||street == "" ||housenumber == "")  {
+        let text = document.getElementById("failedValidation");
+        text.style.display = "block";
+        return false;
+        } else 
+        text = document.getElementById("failedValidation");
+        text.style.display = "none";
+        return true;
+        }
+
+
+    </script>
+</body>
+</html>
